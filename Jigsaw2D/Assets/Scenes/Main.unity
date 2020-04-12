@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 85189405}
   - component: {fileID: 85189404}
   m_Layer: 0
-  m_Name: FlowerImg_14_place
+  m_Name: FlowerImg_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -314,8 +314,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e9d547585e533848bc6c089da059f8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pieceLocked: 0
-  piecePickedUp: 0
 --- !u!61 &542172767
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -418,7 +416,7 @@ GameObject:
   - component: {fileID: 680216364}
   - component: {fileID: 680216363}
   m_Layer: 0
-  m_Name: FlowerImg_15_place
+  m_Name: FlowerImg_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -587,8 +585,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e9d547585e533848bc6c089da059f8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pieceLocked: 0
-  piecePickedUp: 0
 --- !u!50 &1915541280
 Rigidbody2D:
   serializedVersion: 4

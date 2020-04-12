@@ -10,7 +10,7 @@ public class MovePiece : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        instance = this;
+       // instance = this;
         pieceLocked = false;
         piecePickedUp = false;
     }
@@ -18,26 +18,28 @@ public class MovePiece : MonoBehaviour
     // Update is called once per frame
     private void OnMouseDown()
     {
-        piecePickedUp = true;
+       // if (Input.GetMouseButtonDown(0))
+            piecePickedUp = true;
     }
     private void OnMouseUp()
     {
+       // if(Input.GetMouseButtonUp(0))
         piecePickedUp = false;
     }
     void Update()
     {
 
-        if (piecePickedUp) {
-
-            Vector3 newPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (!pieceLocked && piecePickedUp) {
+            Vector2 mousePos=new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+            Vector2 newPos = Camera.main.ScreenToWorldPoint(mousePos);
             transform.position = newPos;
                 }
-        if (!pieceLocked && piecePickedUp)
-        {
-            Vector2 mousePos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-            Vector2 objPos = Camera.main.ScreenToWorldPoint(mousePos);
-            this.transform.position = objPos;
-        }
+        //if (!pieceLocked && piecePickedUp)
+        //{
+        //    Vector2 mousePos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        //    Vector2 objPos = Camera.main.ScreenToWorldPoint(mousePos);
+        //    this.transform.position = objPos;
+        //}
 
 
         //if (Input.GetMouseButtonUp(0))
@@ -64,8 +66,8 @@ public class MovePiece : MonoBehaviour
 
         if (!piecePickedUp)
         {
-            //if (collision.gameObject.name ==gameObject.name)
-            if(DoesPieceMatchWithPlace(gameObject.name,collision.gameObject.name))
+            if (collision.gameObject.name ==gameObject.name)
+            //if(DoesPieceMatchWithPlace(gameObject.name,collision.gameObject.name))
             {
                 pieceLocked = true;
                 transform.position = collision.transform.position;
@@ -91,7 +93,8 @@ public class MovePiece : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (!DoesPieceMatchWithPlace(gameObject.name, collision.gameObject.name))
+        if (collision.gameObject.name != gameObject.name)
+        //if (!DoesPieceMatchWithPlace(gameObject.name, collision.gameObject.name))
         {
 
             GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1f);
