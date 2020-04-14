@@ -50,7 +50,7 @@ public class MovePiece : MonoBehaviour
 
     }
 
-    bool DoesPieceMatchWithPlace(string a,string b)
+     bool DoesPieceMatchWithPlace(string a,string b)
     {
         if(b.Contains(a) )
         {
@@ -63,12 +63,13 @@ public class MovePiece : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-
         if (!piecePickedUp)
         {
-            if (collision.gameObject.name ==gameObject.name)
+            if(collision.gameObject.CompareTag(gameObject.tag))
+            //if (collision.gameObject.name ==gameObject.name)
             //if(DoesPieceMatchWithPlace(gameObject.name,collision.gameObject.name))
             {
+               // print(collision.gameObject.name + " collsion " + gameObject.name + " obj");
                 pieceLocked = true;
                 transform.position = collision.transform.position;
                 GetComponent<BoxCollider2D>().enabled = false;
@@ -76,17 +77,20 @@ public class MovePiece : MonoBehaviour
             }
             else
             {
+               print(collision.gameObject.name + " collsion " + gameObject.name + " obj");
                 //if (!piecePickedUp)
                 //{
-                    GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, .5f);
+                GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, .5f);
                     transform.position = collision.transform.position;
-               // }
-               
+                //collision.GetComponent<BoxCollider2D>().enabled = false;
+                // }
+
             }
         }
         else
         {
             GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1f);
+           // collision.GetComponent<BoxCollider2D>().enabled = true;
         }
 
     }
