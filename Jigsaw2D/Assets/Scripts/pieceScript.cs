@@ -12,18 +12,19 @@ public class pieceScript : MonoBehaviour
     {
         rightPos = transform.position;
         //transform.position = new Vector3(UnityEngine.Random.Range(7.5f, 16.5f), UnityEngine.Random.Range(-6.7f, 1.53f));
-        transform.position = new Vector3(UnityEngine.Random.Range(-0.6f, 3.5f), UnityEngine.Random.Range(-1.5f, 1.5f));
+        transform.position = new Vector3(UnityEngine.Random.Range(0.6f, 4f), UnityEngine.Random.Range(-1.5f, 1.5f));
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Vector3.Distance(transform.position,rightPos)<0.5f)
+        if(Vector3.Distance(transform.position,rightPos)<0.5f && !inRightPos)
         {
             if (!isSelected)
             {
                 transform.position = rightPos;
                 inRightPos = true;
+                MainGamePlayManager.mainInstance.pieceRightPosCounter++;
             }
         }
 
