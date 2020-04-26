@@ -7,6 +7,9 @@ namespace Kakera
 {
     public class PickerController : MonoBehaviour
     {
+        public Image img;
+        public static Sprite carryForward;
+        public RawImage rI;
         public GameObject thesprite;
         [SerializeField]
         private Unimgpicker imagePicker;
@@ -43,11 +46,13 @@ namespace Kakera
             {
                 Debug.LogError("Failed to load texture url:" + url);
             }
-           // Rect rec = new Rect(0, 0, texture.width, texture.height);
+            Rect rec = new Rect(0, 0, texture.width, texture.height);
             // output = texture;
-            output.material.mainTexture = texture;
-            //output = Sprite.Create(texture, rec, new Vector2(0.5f, 0.5f), 256);
-        
+            //output.material.mainTexture = texture;
+            //thesprite.GetComponent<SpriteRenderer>().sprite = Sprite.Create(texture, rec, new Vector2(0.5f, 0.5f),100 /*256*/);
+            img.GetComponent<Image>().sprite = Sprite.Create(texture, rec, new Vector2(0.5f, 0.5f), 256);
+            carryForward = Sprite.Create(texture, rec, new Vector2(0.5f, 0.5f), 256);
+            //rI.texture =texture;
         }
     }
 }

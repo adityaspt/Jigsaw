@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Puzzle
+  - Balloon
+  - Spongebob
+  - House
+  - Select
+  - Image
   layers:
   - Default
   - TransparentFX

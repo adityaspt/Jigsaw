@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class SetPuzzle : MonoBehaviour
 {
     public Sprite[] img;
-
+    Sprite spriteImg;
     //public GameObject dontdestroyedObject;
     public DontDestoryOnLoadScript DontDestroyScript;
     private void Awake()
     {
+        spriteImg = GameObject.Find("PickerController").GetComponent<PickerController>().carryForward;
         //dontdestroyedObject = GameObject.Find("DontDestroyObject");
         DontDestroyScript = GameObject.Find("DontDestroyObject").GetComponent<DontDestoryOnLoadScript>();
     }
@@ -18,9 +19,19 @@ public class SetPuzzle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i=0;i<36; i++)
+        if (DontDestroyScript.puzzleNumber != 1000)
         {
-            GameObject.Find("Piece (" + i + ")").transform.GetChild(0).GetComponent<SpriteRenderer>().sprite=img[DontDestroyScript.puzzleNumber]; 
+            for (int i = 0; i < 36; i++)
+            {
+                GameObject.Find("Piece (" + i + ")").transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = img[DontDestroyScript.puzzleNumber];
+            }
+        }
+        else
+        {
+            for (int i = 0; i < 36; i++)
+            {
+                GameObject.Find("Piece (" + i + ")").transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = spriteImg;
+            }
         }
     }
 

@@ -5,7 +5,7 @@ namespace Kakera
 {
     internal class PickerAndroid : IPicker
     {
-        private static readonly string PickerClass = "com.kakeragames.unimgpicker.Picker";
+        private static readonly string PickerClass ="com.kakeragames.unimgpicker.Picker";//"com.DefaultCompany.Jigsaw2DPickeer"; 
 
         public void Show(string title, string outputFileName, int maxSize)
         {
