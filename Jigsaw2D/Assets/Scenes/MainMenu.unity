@@ -1643,11 +1643,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   img: {fileID: 1125739317}
-  rI: {fileID: 0}
-  thesprite: {fileID: 0}
+  tsprite: {fileID: 0}
   imagePicker: {fileID: 1981672336}
   imageRenderer: {fileID: 0}
-  sizeDropdown: {fileID: 0}
+  pickscript: {fileID: 806850340}
 --- !u!4 &559361984
 Transform:
   m_ObjectHideFlags: 0
@@ -1669,12 +1668,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 559361982}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2282a472bc144b54694acf35aaf6143a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   puzzleNumber: 0
+  theSprite: {fileID: 0}
 --- !u!1 &729925502
 GameObject:
   m_ObjectHideFlags: 0
@@ -1810,6 +1810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzleNumber: 0
+  theSprite: {fileID: 0}
 --- !u!4 &806850341
 Transform:
   m_ObjectHideFlags: 0
@@ -2561,6 +2562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzleNumber: 0
+  theSprite: {fileID: 0}
 --- !u!1001 &1550795544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2637,6 +2639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzleNumber: 0
+  theSprite: {fileID: 0}
 --- !u!1 &1632994322
 GameObject:
   m_ObjectHideFlags: 0

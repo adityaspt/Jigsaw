@@ -8,17 +8,18 @@ namespace Kakera
     public class PickerController : MonoBehaviour
     {
         public Image img;
-        public static Sprite carryForward;
-        public RawImage rI;
-        public GameObject thesprite;
+       // public Sprite carryForward;
+      //  public RawImage rI;
+        public Sprite tsprite;
         [SerializeField]
         private Unimgpicker imagePicker;
 
         [SerializeField]
         private MeshRenderer imageRenderer;
 
-        [SerializeField]
-        private Dropdown sizeDropdown;
+        public DontDestoryOnLoadScript pickscript;
+        //[SerializeField]
+        //private Dropdown sizeDropdown;
 
         private int[] sizes = {1024, 256, 16};
 
@@ -28,6 +29,7 @@ namespace Kakera
             {
                 StartCoroutine(LoadImage(path, imageRenderer));// thesprite.GetComponent<SpriteRenderer>().sprite));
             };
+            //tsprite=pickscript.GetComponent<D>
         }
 
         public void OnPressShowPicker()
@@ -51,7 +53,8 @@ namespace Kakera
             //output.material.mainTexture = texture;
             //thesprite.GetComponent<SpriteRenderer>().sprite = Sprite.Create(texture, rec, new Vector2(0.5f, 0.5f),100 /*256*/);
             img.GetComponent<Image>().sprite = Sprite.Create(texture, rec, new Vector2(0.5f, 0.5f), 256);
-            carryForward = Sprite.Create(texture, rec, new Vector2(0.5f, 0.5f), 256);
+             //  pickscript.theSprite = Sprite.Create(texture, rec, new Vector2(0.5f, 0.5f), 256);
+            pickscript.theSprite = Sprite.Create(texture, rec, new Vector2(0.5f, 0.5f), 100);
             //rI.texture =texture;
         }
     }

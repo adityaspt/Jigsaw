@@ -6,12 +6,13 @@ using UnityEngine.UI;
 public class SetPuzzle : MonoBehaviour
 {
     public Sprite[] img;
-    Sprite spriteImg;
+    //Sprite spriteImg;
     //public GameObject dontdestroyedObject;
+   // public GameObject pickcontrolObj;
     public DontDestoryOnLoadScript DontDestroyScript;
     private void Awake()
     {
-        spriteImg = GameObject.Find("PickerController").GetComponent<PickerController>().carryForward;
+        //pickcontrolObj = GameObject.Find("PickerController");
         //dontdestroyedObject = GameObject.Find("DontDestroyObject");
         DontDestroyScript = GameObject.Find("DontDestroyObject").GetComponent<DontDestoryOnLoadScript>();
     }
@@ -19,6 +20,7 @@ public class SetPuzzle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       // spriteImg = GameObject.Find("PickerController").GetComponent<PickerController>().carryForward;
         if (DontDestroyScript.puzzleNumber != 1000)
         {
             for (int i = 0; i < 36; i++)
@@ -26,11 +28,11 @@ public class SetPuzzle : MonoBehaviour
                 GameObject.Find("Piece (" + i + ")").transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = img[DontDestroyScript.puzzleNumber];
             }
         }
-        else
+        else if(DontDestroyScript.puzzleNumber == 1000)
         {
             for (int i = 0; i < 36; i++)
             {
-                GameObject.Find("Piece (" + i + ")").transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = spriteImg;
+                GameObject.Find("Piece (" + i + ")").transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = DontDestroyScript.theSprite; //pickcontrolObj.GetComponent<PickerController>().theSprite; 
             }
         }
     }
