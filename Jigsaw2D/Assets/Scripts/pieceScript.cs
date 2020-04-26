@@ -22,7 +22,7 @@ public class pieceScript : MonoBehaviour
         if (!inRightPos && Mytag != "" && !isSelected)
         {
             GameObject closestObj = FindNearestObjects(transform.position, Mytag);
-            print(closestObj);
+           // print(closestObj);
             if (Vector3.Distance(transform.position, closestObj.transform.position) < 0.5f)
             {
               
@@ -38,6 +38,7 @@ public class pieceScript : MonoBehaviour
             {
                 transform.position = rightPos;
                 inRightPos = true;
+                GetComponent<BoxCollider2D>().enabled = false;
                 MainGamePlayManager.mainInstance.pieceRightPosCounter++;
             }
         }
