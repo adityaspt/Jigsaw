@@ -64,7 +64,8 @@ public class MainGamePlayManager : MonoBehaviour
 
                 Time.timeScale = 1.0f;
 
-            Destroy(GameObject.Find("DontDestroyObject"));
+           // Destroy(GameObject.Find("DontDestroyObject"));
+            //Destroy(GameObject.Find("PickerController"));
             SceneManager.LoadScene(0);
 
         }

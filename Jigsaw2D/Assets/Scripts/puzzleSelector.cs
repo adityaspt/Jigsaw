@@ -19,6 +19,8 @@ public class puzzleSelector : MonoBehaviour
     void Start()
     {
         //SelfButton.gameObject.tag = "Select";
+
+
     }
 
     // Update is called once per frame
@@ -68,6 +70,7 @@ public class puzzleSelector : MonoBehaviour
         }
         else
             Debug.Log("currentSelectedGameObject is null");
+        //PickerController.img.sprite = null;
         SceneManager.LoadScene(1);
     }
 }

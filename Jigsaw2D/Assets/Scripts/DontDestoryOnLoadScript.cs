@@ -13,6 +13,10 @@ public class DontDestoryOnLoadScript : MonoBehaviour
 
         DontDestroyOnLoad(this);
         instance = this;
+        if (GameObject.Find(gameObject.name) && GameObject.Find(gameObject.name) != this.gameObject)
+        {
+            Destroy(GameObject.Find(gameObject.name));
+        }
     }
     void Start()
     {

@@ -30,8 +30,17 @@ namespace Kakera
                 StartCoroutine(LoadImage(path, imageRenderer));// thesprite.GetComponent<SpriteRenderer>().sprite));
             };
             //tsprite=pickscript.GetComponent<D>
+            
         }
 
+        private void OnLevelWasLoaded(int level)
+        {
+            if (level == 0)
+            {
+                img = GameObject.Find("OwnImage").GetComponent<Image>();
+               // pickscript.theSprite = null;
+            }
+        }
         public void OnPressShowPicker()
         {
             imagePicker.Show("Select Image", "unimgpicker", 256 /* sizes[sizeDropdown.value] */);
@@ -54,7 +63,7 @@ namespace Kakera
             //thesprite.GetComponent<SpriteRenderer>().sprite = Sprite.Create(texture, rec, new Vector2(0.5f, 0.5f),100 /*256*/);
             img.GetComponent<Image>().sprite = Sprite.Create(texture, rec, new Vector2(0.5f, 0.5f), 256);
              //  pickscript.theSprite = Sprite.Create(texture, rec, new Vector2(0.5f, 0.5f), 256);
-            pickscript.theSprite = Sprite.Create(texture, rec, new Vector2(0.5f, 0.5f), 100);
+            pickscript.theSprite = Sprite.Create(texture, rec, new Vector2(0.5f, 0.5f));
             //rI.texture =texture;
         }
     }
