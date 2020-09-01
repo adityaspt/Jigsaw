@@ -17,6 +17,7 @@ namespace TestMultiplayer
             }
             else
             {
+                PhotonNetwork.GameVersion = "1";
                 PhotonNetwork.ConnectUsingSettings();
             }
         }
